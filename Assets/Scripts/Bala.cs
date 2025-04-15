@@ -22,5 +22,9 @@ public class Bala : MonoBehaviour
             collision.gameObject.GetComponent<SpaceshipScript>().vida -= 1;
             Destroy(gameObject);
         }
+        if (collision.CompareTag("barraSuperior"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

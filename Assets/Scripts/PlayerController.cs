@@ -6,19 +6,22 @@ public class PlayerController : MonoBehaviour
     private Vector3 movimiento;
     public GameObject bala;
     public float Timer, TiempoDeEspera;
-    void Start()
-    {
-      
-    }
+    public LayerMask capaObstaculos; // ? Asegúrate de asignar esto en el Inspector
+    public float distanciaColision = 0.1f;
 
     void Update()
     {
+        // Movimiento
+        movimiento = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0).normalized;
 
-        // Asignamos directamente la velocidad al Rigidbody2D
-        movimiento = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0);
-        movimiento = movimiento.normalized;
-        transform.position += movimiento * velocidad* Time.deltaTime;
-        if (Input.GetKey("space")&& Timer <=0)
+        // Raycast para prevenir atravesar objetos
+        if (!HayObstaculo(movimiento))
+        {
+            transform.position += movimiento * velocidad * Time.deltaTime;
+        }
+
+        // Disparo
+        if (Input.GetKey("space") && Timer <= 0)
         {
             Instantiate(bala, transform.position, Quaternion.Euler(0, 0, 90));
             Timer = TiempoDeEspera;
@@ -26,4 +29,9 @@ public class PlayerController : MonoBehaviour
         Timer -= Time.deltaTime;
     }
 
+    bool HayObstaculo(Vector3 direccion)
+    {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direccion, distanciaColision, capaObstaculos);
+        return hit.collider != null;
+    }
 }
