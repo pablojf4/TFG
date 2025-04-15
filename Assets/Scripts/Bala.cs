@@ -15,10 +15,9 @@ public class Bala : MonoBehaviour
     {
         transform.position += new Vector3(0, Velocidad * Time.deltaTime, 0);
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (CompareTag("Nave"))
+        if (collision.CompareTag("Nave"))
         {
             collision.gameObject.GetComponent<SpaceshipScript>().vida -= 1;
             Destroy(gameObject);
