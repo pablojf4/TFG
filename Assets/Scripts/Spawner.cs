@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [Header("Configuración del Spawn")]
+    [Header("Configuraciï¿½n del Spawn")]
     public GameObject objetoASpawnear; // Prefab del objeto a generar
     public float tiempoEntreSpawn = 2f; // Tiempo entre cada spawn
     public float tiempoDeVidaObjeto = 3f; // Tiempo antes de destruir el objeto spawnedo
 
     [Header("Zona de Spawn")]
     public bool usarAreaRectangular = false;
-    public Vector2 areaMinima = new Vector2(-5f, -5f); // Límites mínimos (x, y)
-    public Vector2 areaMaxima = new Vector2(5f, 5f);   // Límites máximos (x, y)
+    public Vector2 areaMinima = new Vector2(-5f, -5f); // Lï¿½mites minimos (x, y)
+    public Vector2 areaMaxima = new Vector2(5f, 5f);   // Lï¿½mites maximos (x, y)
     public float radioSpawn = 5f; // Radio si se usa zona circular
 
     private float tiempoSiguienteSpawn;
@@ -31,7 +31,7 @@ public class Spawner : MonoBehaviour
 
     void SpawnearObjeto()
     {
-        // Calcula posición aleatoria
+        // Calcula posicion aleatoria
         Vector3 posicionAleatoria = CalcularPosicionAleatoria();
 
         // Instancia el objeto
@@ -41,7 +41,7 @@ public class Spawner : MonoBehaviour
             Quaternion.identity
         );
 
-        // Destruye el objeto después de un tiempo
+        // Destruye el objeto despues de un tiempo
         Destroy(nuevoObjeto, tiempoDeVidaObjeto);
     }
 
@@ -72,12 +72,12 @@ public class Spawner : MonoBehaviour
                 (areaMinima.y + areaMaxima.y) / 2,
                 0
             );
-            Vector3 tamaño = new Vector3(
+            Vector3 tamano = new Vector3(
                 areaMaxima.x - areaMinima.x,
                 areaMaxima.y - areaMinima.y,
                 0.1f
             );
-            Gizmos.DrawWireCube(centro, tamaño);
+            Gizmos.DrawWireCube(centro, tamano);
         }
         else
         {
