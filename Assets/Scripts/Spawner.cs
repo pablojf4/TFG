@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [Header("Configuraci�n del Spawn")]
+    [Header("Configuracion del Spawn")]
     public GameObject objetoASpawnear; // Prefab del objeto a generar
     public float tiempoEntreSpawn = 2f; // Tiempo entre cada spawn
     public float tiempoDeVidaObjeto = 3f; // Tiempo antes de destruir el objeto spawnedo
