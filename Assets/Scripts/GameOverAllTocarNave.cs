@@ -12,7 +12,7 @@ public class MuerteAlChocarConNave : MonoBehaviour
             Time.timeScale = 0;
 
             // Opcional: Muestra un mensaje en consola
-            Debug.Log("¡Has chocado con una nave enemiga! Juego pausado.");
+            Debug.Log("Has chocado con una nave enemiga! Juego pausado.");
 
             // (Opcional) Destruye ambos objetos
             // Destroy(gameObject); // Destruye la nave del jugador

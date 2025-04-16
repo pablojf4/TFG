@@ -8,6 +8,7 @@ TagManager:
   - barraSuperior
   - barraInferior
   - balaEnemiga
+  - Audio
   layers:
   - Default
   - TransparentFX
