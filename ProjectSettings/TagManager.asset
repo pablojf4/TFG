@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Nave
   - barraSuperior
+  - barraInferior
+  - balaEnemiga
   layers:
   - Default
   - TransparentFX

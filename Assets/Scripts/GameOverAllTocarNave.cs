@@ -6,7 +6,7 @@ public class MuerteAlChocarConNave : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         // Si choca con un objeto etiquetado como "Nave" (enemiga)
-        if (other.CompareTag("Nave"))
+        if (other.CompareTag("Nave")||other.CompareTag("balaEnemiga"))
         {
             // Detiene el juego (pausa todo)
             Time.timeScale = 0;

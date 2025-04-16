@@ -43,7 +43,7 @@ public class SpaceshipScript : MonoBehaviour
     {
         if (balaEnemiga != null)
         {
-            Instantiate(balaEnemiga, transform.position, Quaternion.identity);
+            Instantiate(balaEnemiga, transform.position, Quaternion.Euler(0, 0, 270));
         }
     }
 }
