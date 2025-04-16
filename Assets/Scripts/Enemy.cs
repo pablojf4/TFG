@@ -1,49 +1,40 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class SpaceshipScript : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
-    public float velocidad = 5f;
-    public int vida;
-    private Rigidbody2D rb;
+    public float movementSpeed;
+    public int life;
+    public GameObject enemyBullet;
+    public float timeBetweenShots;
 
-    [Header("Disparo")]
-    public GameObject balaEnemiga;
-    public float tiempoEntreDisparos = 2f;
-    private float contadorDisparo;
+    AudioManager audioManager;
+    Rigidbody2D rigidBody;
+    float timer;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        contadorDisparo = tiempoEntreDisparos; // Primer disparo tras esperar el tiempo
-    }
-
-    void FixedUpdate()
-    {
-        // Movimiento hacia abajo constante
-        rb.linearVelocity = new Vector2(0, -velocidad);
-
-        if (vida <= 0)
-        {
-            Destroy(gameObject);
-        }
+        rigidBody = GetComponent<Rigidbody2D>();
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        Destroy(gameObject, 10);
     }
 
     void Update()
     {
-        // Temporizador de disparo
-        contadorDisparo -= Time.deltaTime;
-        if (contadorDisparo <= 0f)
-        {
-            Disparar();
-            contadorDisparo = tiempoEntreDisparos;
-        }
-    }
+        rigidBody.linearVelocity = new Vector2(0, -movementSpeed);
 
-    void Disparar()
-    {
-        if (balaEnemiga != null)
+        if (life <= 0)
         {
-            Instantiate(balaEnemiga, transform.position, Quaternion.Euler(0, 0, 270));
+            Destroy(gameObject);
+            GameObject.Find("Player").GetComponent<Player>().points += 1;
         }
+
+        if (timer <= 0)
+        {
+            Instantiate(enemyBullet, transform.position, Quaternion.Euler(0, 0, 270));
+            audioManager.PlaySFX(audioManager.shot);
+            timer = timeBetweenShots;
+        }
+        timer -= Time.deltaTime;
     }
 }

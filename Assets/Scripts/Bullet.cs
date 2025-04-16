@@ -1,29 +1,24 @@
 using UnityEngine;
 
-public class Bala : MonoBehaviour
+public class Bullet : MonoBehaviour
 {
-    public float Velocidad;
+    public float speed;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Destroy(gameObject, 5f);
+        Destroy(gameObject, 5);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        transform.position += new Vector3(0, Velocidad * Time.deltaTime, 0);
+        transform.position += new Vector3(0, speed * Time.deltaTime, 0);
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.CompareTag("Nave"))
+        if (collision.gameObject.CompareTag("Enemy"))
         {
-            collision.gameObject.GetComponent<SpaceshipScript>().vida -= 1;
-            Destroy(gameObject);
-        }
-        if (collision.CompareTag("barraSuperior"))
-        {
+            collision.gameObject.GetComponent<Enemy>().life -= 1;
             Destroy(gameObject);
         }
     }

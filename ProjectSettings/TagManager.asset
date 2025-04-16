@@ -4,11 +4,9 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Nave
-  - barraSuperior
-  - barraInferior
-  - balaEnemiga
   - Audio
+  - Enemy
+  - Enemy Bullet
   layers:
   - Default
   - TransparentFX
@@ -16,11 +14,11 @@ TagManager:
   - 
   - Water
   - UI
-  - "Obst\xE1culos"
   - 
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - Player Projectile
+  - Enemy Projectile
   - 
   - 
   - 

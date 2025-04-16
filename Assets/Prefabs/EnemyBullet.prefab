@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 1009595836884211678}
   - component: {fileID: -4672900815216926730}
   - component: {fileID: 190961978401279553}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: EnemyBullet
-  m_TagString: balaEnemiga
+  m_TagString: Enemy Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,13 +28,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8694076295669621699}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -3.4890444, y: 0.37883523, z: -0.017009579}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!212 &2135118760243349887
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16634f0be63429f48b5e6ffe2f2615f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Velocidad: 6
+  speed: 6
 --- !u!61 &-4672900815216926730
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -133,7 +133,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0

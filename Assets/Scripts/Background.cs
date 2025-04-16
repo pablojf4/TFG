@@ -1,20 +1,22 @@
 using UnityEngine;
 
-public class MovimientoFondo : MonoBehaviour
+public class Background : MonoBehaviour
 {
-    public float scrollSpeed = 0.5f;
-    public float backgroundHeight; // Altura del sprite en unidades de mundo
+    float velocidad = 1f; // Velocidad del movimiento
+    float altura = 2.7f; // Altura de un fondo
+    float limiteY = -2.7f; // Límite en el eje Y donde el fondo se reposiciona
 
     void Update()
     {
         // Mueve el fondo hacia abajo
-        transform.Translate(Vector3.down * scrollSpeed * Time.deltaTime);
+        transform.position += Vector3.down * velocidad * Time.deltaTime;
 
-        // Si el fondo sale completamente de la pantalla, lo reposiciona arriba
-        if (transform.position.y <= -backgroundHeight)
+        // Cuando el fondo llega al límite, se reposiciona en el fondo superior
+        if (transform.position.y <= limiteY)
         {
-            float resetPosition = backgroundHeight; // Lo coloca arriba del otro fondo
-            transform.position = new Vector3(transform.position.x, resetPosition, transform.position.z);
+            // Reposiciona el fondo a la parte superior
+            transform.position =
+                new Vector3(transform.position.x, transform.position.y + altura * 3, transform.position.z);
         }
     }
 }

@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 4321264889329684980}
   - component: {fileID: 6850392557115671025}
   - component: {fileID: 2369545622107502185}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy
-  m_TagString: Nave
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,7 +120,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d675066a77aef604c9f7c0f94f0ada95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 2
-  vida: 2
-  balaEnemiga: {fileID: 8694076295669621699, guid: 9c4115745ac223f44b222240ac44d7fd, type: 3}
-  tiempoEntreDisparos: 5
+  movementSpeed: 2
+  life: 2
+  enemyBullet: {fileID: 8694076295669621699, guid: 9c4115745ac223f44b222240ac44d7fd, type: 3}
+  timeBetweenShots: 2

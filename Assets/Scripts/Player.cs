@@ -1,14 +1,18 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class PlayerController : MonoBehaviour
+public class Player : MonoBehaviour
 {
-    public float velocidad = 5f;
-    private Vector3 movimiento;
-    public GameObject bala;
-    public float Timer, TiempoDeEspera;
-    public LayerMask capaObstaculos;
-    public float distanciaColision = 0.1f;
-    
+    public TextMeshProUGUI score;
+    public int points;
+    public float movementSpeed;
+    public int life;
+    public GameObject bullet;
+    public float timeBetweenShots;
+
+    float timer;
+    Vector3 movement;
     AudioManager audioManager;
 
     void Awake()
@@ -18,25 +22,25 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        movimiento = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0).normalized;
+        movement = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0).normalized;
+        transform.position += Time.deltaTime * movementSpeed * movement;
 
-        if (!HayObstaculo(movimiento))
+        if (Input.GetKey("space") && timer <= 0)
         {
-            transform.position += movimiento * velocidad * Time.deltaTime;
+            Instantiate(bullet, transform.position, Quaternion.Euler(0, 0, 90));
+            audioManager.PlaySFX(audioManager.shot);
+            timer = timeBetweenShots;
         }
+        timer -= Time.deltaTime;
 
-        if (Input.GetKey("space") && Timer <= 0)
-        {
-            Instantiate(bala, transform.position, Quaternion.Euler(0, 0, 90));
-            audioManager.PlaySFX(audioManager.shoot);
-            Timer = TiempoDeEspera;
-        }
-        Timer -= Time.deltaTime;
+        score.text = points.ToString();
     }
 
-    bool HayObstaculo(Vector3 direccion)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direccion, distanciaColision, capaObstaculos);
-        return hit.collider != null;
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Enemy Bullet"))
+        {
+            life -= 1;
+        }
     }
 }
