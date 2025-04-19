@@ -12,14 +12,14 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         transform.position += new Vector3(0, speed * Time.deltaTime, 0);
-        //Obtiene la posición actual de la bala
+        //Obtiene la posicion actual de la bala
         Vector2 pos = transform.position;
 
-        //Encuentra los límites de la pantalla para el movimiento de la bala
+        //Encuentra los lï¿½mites de la pantalla para el movimiento de la bala
         Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));// Este es el punto (esquina) inferior izquierda de la pantalla.
         Vector2 max = Camera.main.ViewportToWorldPoint(new Vector2(1, 1));//Este es el punto (esquina) superior derecha de la pantalla.
 
-        //Se revisa si la posición de la bala en el eje y es superior al margen superior de la cámara
+        //Se revisa si la posicion de la bala en el eje y es superior al margen superior de la cï¿½mara
         //Si es superior se destruye la bala
         if (pos.y > max.y)
         {

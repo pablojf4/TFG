@@ -46,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -209,7 +209,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Saboteur_0: -6957436035718461678
+      Saboteur_1: -7794703313812279113
+      Saboteur_2: 9032732722429888574
+      Saboteur_3: -7545485763982054482
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
