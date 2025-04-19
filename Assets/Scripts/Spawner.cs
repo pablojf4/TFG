@@ -10,7 +10,7 @@ public class Spawner : MonoBehaviour
     {
         if (timer <= 0)
         {
-            Instantiate(enemy, new Vector3(0, 10, 0), Quaternion.Euler(0, 0, 0));
+            Instantiate(enemy, new Vector3(Random.Range(-2, 2), transform.position.y, 0), Quaternion.Euler(0, 0, 0));
             timer = timeBetweenSpawns;
         }
         timer -= Time.deltaTime;
