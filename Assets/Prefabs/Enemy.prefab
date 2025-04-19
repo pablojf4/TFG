@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4321264889329684980}
   - component: {fileID: 6850392557115671025}
   - component: {fileID: 2369545622107502185}
+  - component: {fileID: 3213970463712840616}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Enemy
@@ -175,7 +176,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d675066a77aef604c9f7c0f94f0ada95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 2
+  movementSpeed: 1
   life: 2
   enemyBullet: {fileID: 8694076295669621699, guid: 9c4115745ac223f44b222240ac44d7fd, type: 3}
-  timeBetweenShots: 2
+  timeBetweenShots: 3
+--- !u!95 &3213970463712840616
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5628615184624505268}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d9622379a5c1a8a4580eb7e3b56bc24a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

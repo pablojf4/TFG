@@ -562,6 +562,7 @@ GameObject:
   - component: {fileID: 607818757}
   - component: {fileID: 607818758}
   - component: {fileID: 607818759}
+  - component: {fileID: 607818760}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -742,6 +743,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7d2734f351491b459073d3d2fff66ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &607818760
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607818751}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cca3dba481a4d4245b77768a35b430d7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1016,6 +1039,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ed4deae0e1a8014b86da650e88faf60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scrollSpeed: 1
 --- !u!1 &984619918
 GameObject:
   m_ObjectHideFlags: 0
@@ -1046,6 +1070,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ed4deae0e1a8014b86da650e88faf60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scrollSpeed: 1
 --- !u!212 &984619920
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1294,6 +1319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ed4deae0e1a8014b86da650e88faf60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scrollSpeed: 1
 --- !u!1 &1098121741
 GameObject:
   m_ObjectHideFlags: 0

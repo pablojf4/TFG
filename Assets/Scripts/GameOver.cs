@@ -6,7 +6,7 @@ public class GameOver : MonoBehaviour
     {
         if (gameObject.GetComponent<Player>().life <= 0)
         {
-           Time.timeScale = 0;
+           //Time.timeScale = 0;
         }
     }
 }
