@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     public int life;
     public GameObject bullet;
     public float timeBetweenShots;
-
+    public HealthBar healthBar;
     float timer;
     Vector3 movement;
     AudioManager audioManager;
@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        healthBar.SetMaxHealth(life);
     }
 
     void Update()
@@ -68,6 +69,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Enemy Bullet"))
         {
             life -= 1;
+            healthBar.SetHealth(life);
         }
     }
 }

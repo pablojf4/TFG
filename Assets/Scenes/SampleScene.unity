@@ -655,9 +655,10 @@ MonoBehaviour:
   score: {fileID: 1334012155}
   points: 0
   movementSpeed: 3
-  life: 1
+  life: 3
   bullet: {fileID: 738120196910555876, guid: 9d1318ee981f15c44964dae71c479b17, type: 3}
   timeBetweenShots: 0.5
+  healthBar: {fileID: 640365535}
 --- !u!50 &607818757
 Rigidbody2D:
   serializedVersion: 5
@@ -859,6 +860,7 @@ GameObject:
   m_Component:
   - component: {fileID: 640365533}
   - component: {fileID: 640365534}
+  - component: {fileID: 640365535}
   m_Layer: 5
   m_Name: Health Bar
   m_TagString: Untagged
@@ -939,6 +941,50 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &640365535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640365532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3b8dbcae55cfac4da9db301ad6c3df5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 640365534}
+  gradient:
+    serializedVersion: 2
+    key0: {r: 0.9169811, g: 0.10986457, b: 0.06747586, a: 1}
+    key1: {r: 0.9372549, g: 0.9279272, b: 0.047058843, a: 1}
+    key2: {r: 0.050980397, g: 0.93725497, b: 0.13333334, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 22745
+    ctime1: 48959
+    ctime2: 65535
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 34926
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 1
+    m_ColorSpace: -1
+    m_NumColorKeys: 3
+    m_NumAlphaKeys: 2
+  fill: {fileID: 2107142704}
 --- !u!1 &920030038
 GameObject:
   m_ObjectHideFlags: 0
@@ -2169,7 +2215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.93725497, g: 0.058823533, b: 0.1137255, a: 1}
+  m_Color: {r: 0.05882351, g: 0.9372549, b: 0.13604929, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
